@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 };
 
 export default async function BlogIndex() {
+  // force new build
   let blogs: BlogPost[] = [];
   try {
     blogs = await getBlogs();
