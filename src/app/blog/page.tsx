@@ -75,24 +75,3 @@ export default async function BlogIndex() {
     </div>
   );
 }
-                Subscribe to our newsletter for exclusive privacy tips and updates from the AgencyMail team.
-              </p>
-              <form className="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white placeholder:text-gray-500 focus:outline-none focus:border-primary/50 transition-colors"
-                />
-                <button className="bg-primary text-dark font-black px-8 py-4 rounded-xl uppercase tracking-widest hover:bg-white transition-all duration-300 transform active:scale-95 shadow-lg shadow-primary/20">
-                  Subscribe
-                </button>
-              </form>
-            </div>
-          </motion.div>
-        </div>
-      </main>
-
-      <Footer />
-    </div>
-  );
-}
