@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { Calendar, User, Clock, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
