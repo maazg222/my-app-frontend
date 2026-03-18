@@ -27,7 +27,7 @@ export const getParserOptions = (options?: HTMLReactParserOptions): HTMLReactPar
         );
       }
       if (options?.replace) {
-        return options.replace(domNode);
+        return (options.replace as (domNode: any) => any)(domNode);
       }
     },
   };
