@@ -20,7 +20,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://agencymail.com'),
+  metadataBase: new URL('https://www.agencymail.qzz.io'),
   title: {
     default: 'Free Temporary Email - AgencyMail',
     template: '%s | AgencyMail'
