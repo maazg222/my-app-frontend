@@ -353,7 +353,7 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "WebApplication",
             "name": "AgencyMail",
-            "url": "https://agencymail.com",
+            "url": process.env.NEXT_PUBLIC_BASE_URL || 'https://agencymail.qzz.io',
             "description": "Free temporary email service. Fast, secure and easy to use.",
             "applicationCategory": "UtilitiesApplication",
             "operatingSystem": "All",

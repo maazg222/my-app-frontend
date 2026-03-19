@@ -120,7 +120,7 @@ export default function Contact() {
           <div className="flex items-center space-x-6">
             <div className="text-right hidden md:block">
               <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">Email Node</p>
-              <p className="text-xl font-black text-white italic tracking-tighter">support@agencymail.com</p>
+              <p className="text-xl font-black text-white italic tracking-tighter">support@{process.env.NEXT_PUBLIC_BASE_URL ? new URL(process.env.NEXT_PUBLIC_BASE_URL).hostname : 'agencymail.qzz.io'}</p>
             </div>
             <div className="w-16 h-16 bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center text-primary group hover:bg-primary hover:text-white transition-all duration-300">
               <Mail className="w-8 h-8" />

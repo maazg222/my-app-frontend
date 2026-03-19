@@ -1,7 +1,7 @@
 import { getBlogs } from '@/lib/api';
 
 export default async function sitemap() {
-  const baseUrl = 'https://agencymail.com';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://agencymail.qzz.io';
   
   let blogEntries: any[] = [];
   try {

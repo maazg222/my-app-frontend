@@ -20,7 +20,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://agencymail.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://agencymail.qzz.io'),
   title: {
     default: 'Free Temporary Email - AgencyMail',
     template: '%s | AgencyMail'
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free Temporary Email - AgencyMail',
     description: 'Protect your privacy with our free temporary email service. Fast, secure, and easy to use.',
-    url: 'https://agencymail.com',
+    url: process.env.NEXT_PUBLIC_BASE_URL || 'https://agencymail.qzz.io',
     siteName: 'AgencyMail',
     images: [
       {
@@ -77,9 +77,12 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://agencymail.com',
+    canonical: process.env.NEXT_PUBLIC_BASE_URL || 'https://agencymail.qzz.io',
   },
   category: 'technology',
+  other: {
+    'google-adsense-account': 'ca-pub-9864680842416202',
+  },
 }
 
 export default function RootLayout({
@@ -90,12 +93,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <head>
-        <Script 
+        <script 
           async 
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9864680842416202"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
+        ></script>
       </head>
       <body className={`${inter.className} antialiased selection:bg-primary/30 selection:text-primary`}>
         <Toaster position="bottom-right" />

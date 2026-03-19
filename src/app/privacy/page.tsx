@@ -19,7 +19,7 @@ export default function Privacy() {
         <p className="text-gray-400">Last updated: March 18, 2026</p>
         
         <section className="mt-8 space-y-6 text-gray-300">
-          <p>At AgencyMail, accessible from agencymail.com, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by AgencyMail and how we use it.</p>
+          <p>At AgencyMail, accessible from {process.env.NEXT_PUBLIC_BASE_URL ? new URL(process.env.NEXT_PUBLIC_BASE_URL).hostname : 'agencymail.qzz.io'}, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by AgencyMail and how we use it.</p>
           
           <h2 className="text-2xl font-bold text-white">1. Information We Collect</h2>
           <p>AgencyMail is a temporary email service. We do not require any personal information like your name, phone number, or real email address to use our service. We only generate a temporary mailbox for you to use.</p>
