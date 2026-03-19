@@ -1,24 +1,29 @@
 import { getBlogs } from '@/lib/api';
+import { MetadataRoute } from 'next';
 
-export default async function sitemap() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://agencymail.qzz.io';
+export const revalidate = 3600; // revalidate every hour
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const baseUrl = (process.env.NEXT_PUBLIC_BASE_URL || 'https://agencymail.qzz.io').replace(/\/$/, '');
   
-  let blogEntries: any[] = [];
+  let blogEntries: MetadataRoute.Sitemap = [];
   try {
     const blogs = await getBlogs();
-    blogEntries = blogs.map((post: any) => ({
-      url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    }));
+    if (Array.isArray(blogs)) {
+      blogEntries = blogs.map((post: any) => ({
+        url: `${baseUrl}/blog/${post.slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 0.7,
+      }));
+    }
   } catch (error) {
     console.error('Failed to fetch blogs for sitemap:', error);
   }
   
-  return [
+  const routes: MetadataRoute.Sitemap = [
     {
-      url: baseUrl,
+      url: `${baseUrl}`,
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 1,
@@ -53,6 +58,7 @@ export default async function sitemap() {
       changeFrequency: 'monthly',
       priority: 0.3,
     },
-    ...blogEntries
   ];
+
+  return [...routes, ...blogEntries];
 }

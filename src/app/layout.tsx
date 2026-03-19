@@ -20,7 +20,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://agencymail.qzz.io'),
+  metadataBase: new URL((process.env.NEXT_PUBLIC_BASE_URL || 'https://agencymail.qzz.io').replace(/\/$/, '')),
   title: {
     default: 'Free Temporary Email - AgencyMail',
     template: '%s | AgencyMail'
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free Temporary Email - AgencyMail',
     description: 'Protect your privacy with our free temporary email service. Fast, secure, and easy to use.',
-    url: process.env.NEXT_PUBLIC_BASE_URL || 'https://agencymail.qzz.io',
+    url: (process.env.NEXT_PUBLIC_BASE_URL || 'https://agencymail.qzz.io').replace(/\/$/, ''),
     siteName: 'AgencyMail',
     images: [
       {
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: process.env.NEXT_PUBLIC_BASE_URL || 'https://agencymail.qzz.io',
+    canonical: (process.env.NEXT_PUBLIC_BASE_URL || 'https://agencymail.qzz.io').replace(/\/$/, ''),
   },
   category: 'technology',
   other: {
