@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /private/
-
-Sitemap: https://agencymail.qzz.io/sitemap.xml
