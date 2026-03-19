@@ -80,6 +80,9 @@ export const metadata: Metadata = {
     canonical: 'https://agencymail.com',
   },
   category: 'technology',
+  other: {
+    'google-adsense-account': 'ca-pub-9864680842416202',
+  },
 }
 
 export default function RootLayout({
@@ -90,12 +93,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <head>
-        <Script 
+        <script 
           async 
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9864680842416202"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
+        ></script>
       </head>
       <body className={`${inter.className} antialiased selection:bg-primary/30 selection:text-primary`}>
         <Toaster position="bottom-right" />
