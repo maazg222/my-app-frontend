@@ -14,7 +14,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/terms',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date().toISOString(),
+    lastModified: new Date().toISOString().split('T')[0],
     changeFrequency: 'daily' as const,
     priority: route === '' ? 1 : 0.8,
   }))
@@ -26,7 +26,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     if (Array.isArray(blogs)) {
       blogEntries = blogs.map((post: any) => ({
         url: `${baseUrl}/blog/${post.slug}`,
-        lastModified: new Date().toISOString(),
+        lastModified: new Date().toISOString().split('T')[0],
         changeFrequency: 'weekly' as const,
         priority: 0.7,
       }))
